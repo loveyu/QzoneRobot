@@ -27,7 +27,7 @@ class shuoshuo{
 			return false;
 		}
 		$this->content=$this->shuoshuo['english'].', '.$this->shuoshuo['pt'].', '.$this->shuoshuo['chinese'];
-		if(isset($this->app_info['name']))$this->content.='   ('.$this->app_info['name'].')';
+		if(isset($this->app_info['name']) && !empty($this->app_info['name']))$this->content.='   ('.$this->app_info['name'].')';
 	}
 	public function flag_shuoshuo(){
 		if(!$this->sql->up_sql_arr('word',array('flag'=>'1'),'`id`='.$this->shuoshuo['id']))$this->error='flag word fail';
